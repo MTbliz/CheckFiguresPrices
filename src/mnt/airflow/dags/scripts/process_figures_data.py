@@ -49,8 +49,11 @@ def main():
       .csv(r'/opt/airflow/dags/files/figures_prices.csv')
 
     # Write to MySQL Table
+    # if data should be overwritten
+    #  .option("truncate", "true") \
+    #  .mode("overwrite") \
     sdf_final.write \
-      .mode("overwrite") \
+      .mode("append") \
       .format("jdbc") \
       .option("driver","org.postgresql.Driver") \
       .option("url", "jdbc:postgresql://postgres:5432/airflow_db") \

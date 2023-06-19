@@ -1,0 +1,171 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/market_content.css')}}">
+
+{% extends 'market.html' %} 
+{% block center_content %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<div class="container">
+    <div class="row" style="background-color: rgb(209, 231, 221);border-top: grey; margin-top: 60px; margin-bottom: 40px; height: 600px;">
+        <div class="col-md-6" style="margin: 0; padding: 0">
+            <div class="row" style="margin-top: 8px; color: black; font-weight: bold">
+                <h5>{{ figure }}</h5>
+                <hr/>
+            </div>
+            <div class="row">
+                <table class="table table-success table-striped table-sm" style="margin-top: 10px; margin-left: 5px;">
+                    <thead>
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Source</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Availability</th>
+                            <th scope="col">Comments</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for figure in figures_details_pagin %} 
+                        <tr>
+                            <td><div class="cell-size">{{figure.download}}</div></td>
+                            <td><div class="cell-size">{{figure.source}}</div></td>
+                            <td><div class="cell-size">{{figure.price|replace(".", ",")}} zł</div></td>
+                            <td><div class="cell-size">{{figure.availability}}</div></td>
+                            <td><div class="cell-size">{{figure.comments}}</div></td>
+                        </tr>
+                        {% endfor %} 
+                    </tbody>
+                </table>
+            </div>
+            <div class="row" >
+                <div class="col-md-6">
+                    <!--Pagination Links-->
+                    <div class="pagination" >
+                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=figures_details_pagin.prev_num) }}" class="btn btn-outline-dark" {% if figures_details_pagin.page == 1 %}disabled{% endif %}>
+                            &laquo;
+                        </a>
+                        <!--Loop through the number of pages to display a link for each-->
+                        {% for page_num in figures_details_pagin.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %} 
+                        {% if page_num %} 
+                        <!-- Check for active page and set the link to "Active"-->
+                        {% if figures_details_pagin.page == page_num %} 
+                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=page_num) }}" class="btn btn-dark">
+                            {{ page_num }} 
+                        </a>
+                        {% else %} 
+                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=page_num) }}" class="btn btn-outline-dark">
+                            {{ page_num }}
+                        </a>
+                        {% endif %} 
+                        {% else %} 
+                        ... 
+                        {% endif %} 
+                        {% endfor %} 
+                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=figures_details_pagin.next_num )}}" class="btn btn-outline-dark" {% if figures_details_pagin.page == figures_details_pagin.pages %}disabled{% endif %} >
+                            &raquo;
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+
+                </div>
+                <div class="col-md-4" style="color: black; font-weight: bold;">
+                    Showing page {{ figures_details_pagin.page }} of {{ figures_details_pagin.pages }}
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6" style="margin: 0; padding: 0;">
+            <div class="row" style="height: 130px;">
+                    <div class="col-md-4" style=" margin-top: 10px;">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body">
+                              <h1 class="card-title">{{ min_price }}</h1>
+                              <p class="card-text">Min Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style=" margin-top: 10px;">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body">
+                                <h1 class="card-title">{{ max_price }}</h1>
+                                <p class="card-text">Max Price</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4" style=" margin-top: 10px;">
+                        <div class="card text-white bg-success mb-3">
+                            <div class="card-body">
+                                <h1 class="card-title">{{ avg_price }}</h1>
+                                <p class="card-text">Avg Price</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row" style="height: 470px;">
+                <canvas id="myChart" style="height: 95%;" ></canvas>
+            </div>
+        </div>
+    </div>
+</div> 
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  var labels = [{% for figure in figures_details_all %}'{{ figure.download }}',{% endfor %}];
+  var prices_data = [{% for figure in figures_details_all %}'{{ figure.price }}',{% endfor %}];
+  const data = {
+    labels: labels,
+    datasets: [{
+        label: 'Price history',
+        data: prices_data,
+        fill: false,
+        borderColor: 'rgb(75, 192, 192)',
+        tension: 0.1
+    }]
+  }
+  
+  ;
+
+  const config = {
+        type: 'line',
+        data: data,
+        options: {
+            plugins: {
+                legend: {
+                    display: false
+                }, 
+                tooltip: {
+                    yAlign: 'bottom'
+                },
+                title: {
+                    color: 'rgb(0, 0, 0)',
+                    display: true,
+                    text: 'Price history',
+                    font: {
+                        size: 20
+                    }
+                }
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        color: 'rgb(0, 0, 0)'
+                    },
+                    grid: {
+                        display: false
+                    },
+                    beginAtZero: false,
+                },
+                y: {
+                    ticks: {
+                        color: 'rgb(0, 0, 0)'
+                    },
+                    grid: {
+                        display: false
+                    },
+                }
+            }
+        }
+    };
+
+new Chart(ctx, config)
+  </script>
+
+{% endblock %}

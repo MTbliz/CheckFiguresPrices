@@ -30,12 +30,12 @@ RUN apt-get update -yqq && \
     gcc \
     vim \
     locales \
-    openjdk-11-jdk \
+    #openjdk-11-jdk \
     ant \
     && apt-get clean
 
 # Set JAVA_HOME
-ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
+#ENV JAVA_HOME /usr/lib/jvm/java-11-openjdk-amd64/
 RUN export JAVA_HOME
 
 COPY ./constraints-3.7.txt /constraints-3.7.txt
