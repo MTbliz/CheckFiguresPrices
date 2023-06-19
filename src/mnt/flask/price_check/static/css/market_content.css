@@ -1,0 +1,30 @@
+.main-con {
+    margin-top: 10px;
+    padding-top: 5px;
+    height: 97%;
+    background-color: rgba(0,0,0,0.2);
+}
+
+.filters {
+    margin-top: 5px;
+    font-size: larger;
+}
+
+.num-pages {
+    text-align: left;
+}
+
+.pagination {
+    margin-bottom: 20px;
+}
+
+.scroll-table {
+    overflow-x: auto;
+}
+
+.cell-size {
+    max-width: 180px;
+    max-height: 100px;
+    word-wrap: break-word;
+    overflow: auto;
+}

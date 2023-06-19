@@ -1,0 +1,49 @@
+{% extends 'base.html' %} 
+{% block content %} 
+
+<div class="container-fluid px-0">
+    <div class="row space">
+        <div class="col-md-1 left-side">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-10 center-side">
+            {% block center_content %}
+            {% endblock %}
+        </div>
+        <div class="col-md-1 right-side">
+
+        </div>
+    </div>
+</div>
+<style>
+    .left-side {
+        background-color: #48494c;
+        padding-left: 0px;
+    }
+
+    .left-side .nav .nav-item a {
+        color: white;
+    }
+
+    .left-side .nav .nav-item a:hover {
+        background-color: rgba(0,0,0,0.3);
+    }
+
+    .center-side {
+        background-color: #48494c;
+    }
+
+    .right-side {
+        background-color: #48494c;
+    }
+
+    .space {
+        height: 100%;
+        padding-left: 0px;
+    }
+</style>
+{% endblock %}

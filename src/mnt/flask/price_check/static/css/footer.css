@@ -1,0 +1,12 @@
+.footer-dark {
+    bottom: 2px;
+    height: 100px;
+    text-align: center;
+    vertical-align: middle;
+    width: 100%;
+}
+
+footer {
+    margin-top: 10px;
+}
+

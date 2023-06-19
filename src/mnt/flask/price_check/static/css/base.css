@@ -1,0 +1,37 @@
+body {
+    background-color: #212121;
+    color: white;
+    min-width: 1500px;
+}
+
+.content {
+    background-color: #48494c;
+    display: flex;
+    min-height: 76vh;
+}
+
+.footer {
+    border-top: 1px solid rgba(0,0,0,0.7);
+    display: block;
+    min-height: 16vh;
+    background-color: #16181a;
+}
+
+.header {
+    margin-left: 5px;
+    height: 8vh;
+    display: block;
+    min-height: 50px;
+    border-bottom: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.app-content {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}

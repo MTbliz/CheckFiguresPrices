@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="{{ url_for('static', filename='css/market_content.css')}}">
+{% extends 'market.html' %} 
+{% block center_content %} 
+<div class="row" style="border-top: grey; margin-top: 10px;">
+    <div class="col-md-10" style="margin-top: 3px;">
+        <h5>Figures</h5>
+    </div>
+    <div class="col-md-2">
+        <form method="GET">
+            <label for="sorted_by">Sorted by</label>
+            <select name="sorted_by" class="form-select" aria-label="Select by field" onchange="this.form.submit()">
+                {% for item in selection_options %}
+                {% set item1, item2 = item.split('_') %}
+                <option value = "{{ item }}" {% if item == selected_option %} selected="selected" {% endif %}>
+                    {{ item1|title }} {{ item2|title }}
+                </option>
+                {% endfor %}
+            </select>
+        </form>
+    </div>
+</div>
+<div class="row table-row">
+    <div class="col-md-10 scroll-table">
+        <table class="table table-success table-striped table-sm">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Availability</th>
+                    <th scope="col">Source</th>
+                    <th scope="col">Comments</th>
+                    <th scope="col">Min Price</th>
+                    <th scope="col">Max Price</th>
+                    <th scope="col">Avg Price</th>
+                    <th scope="col"></th>
+                    <th scope="col">Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for figure in figures_details_pagin %} 
+                <tr>
+                    <td><div class="cell-size">{{figure.title}}</div></td>
+                    <td><div class="cell-size">{{figure.price|replace("_", "-")}} zł</div></td>
+                    <td><div class="cell-size">{{figure.availability}}</div></td>
+                    <td><div class="cell-size">{{figure.source}}</div></td>
+                    <td><div class="cell-size">{{figure.comments}}</div></td>
+                    <td><div class="cell-size">{{figure.min_price|replace(".", ",")}} zł</div></td>
+                    <td><div class="cell-size">{{figure.max_price|replace(".", ",")}} zł</div></td>
+                    <td><div class="cell-size">{{figure.avg_price|replace(".", ",")}} zł</div></td>
+                    <td>
+                        <div class="cell-size">
+                            {% if figure.price == figure.avg_price|float %}
+                            <i class="bi bi-arrow-right" style="font-size: 25px; color: orange;"></i>
+                            {% elif figure.price < figure.avg_price|float %}
+                            <i class="bi bi-arrow-down-right" style="font-size: 25px; color: green;"></i>
+                            {% else %}
+                            <i class="bi bi-arrow-up-right" style="font-size: 25px; color: red;"></i>
+                            {% endif %} 
+                        </div>
+                    </td>
+                    <td>
+                        <a href="{{ url_for('figures.figures_details_page', id = figure.id) }}" class="btn btn-secondary btn-sm">Details</a>
+                    </td>
+                </tr>
+                {% endfor %} 
+            </tbody>
+        </table>
+    </div>
+    <div class="col-md-2">
+        <div class="filters">
+            <!--Sort and Filters-->
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <!--Pagination Links-->
+        <div class="pagination">
+            <a href="{{ url_for('figures.figures_page', page=figures_details_pagin.prev_num, sorted_by=selected_option) }}" class="btn btn-outline-light" {% if figures_details_pagin.page == 1 %}disabled{% endif %}>
+                &laquo;
+            </a>
+            <!--Loop through the number of pages to display a link for each-->
+            {% for page_num in figures_details_pagin.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %} 
+            {% if page_num %} 
+            <!-- Check for active page and set the link to "Active"-->
+            {% if figures_details_pagin.page == page_num %} 
+            <a href="{{ url_for('figures.figures_page', page=page_num, sorted_by=selected_option) }}" class="btn btn-light">
+                {{ page_num }} 
+            </a>
+            {% else %} 
+            <a href="{{ url_for('figures.figures_page', page=page_num, sorted_by=selected_option) }}" class="btn btn-outline-light">
+                {{ page_num }}
+            </a>
+            {% endif %} 
+            {% else %} 
+            ... 
+            {% endif %} 
+            {% endfor %} 
+            <a href="{{ url_for('figures.figures_page', page=figures_details_pagin.next_num, sorted_by=selected_option )}}" class="btn btn-outline-light" {% if figures_details_pagin.page == figures_details_pagin.pages %}disabled{% endif %} >
+                &raquo;
+            </a>
+        </div>
+    </div>
+    <div class="col-md-2">
+
+    </div>
+    <div class="col-md-4">
+        <div class="num-pages">
+            Showing page {{ figures_details_pagin.page }} of {{ figures_details_pagin.pages }}
+        </div>
+    </div>
+</div>
+{% endblock %}

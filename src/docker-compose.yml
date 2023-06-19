@@ -6,7 +6,6 @@ services:
 ######################################################
   postgres:
     image: postgres:12-alpine
-    restart: always
     container_name: postgres
     logging:
       driver: "json-file"
@@ -31,7 +30,6 @@ services:
 
   adminer:
     image: wodby/adminer:latest
-    restart: always
     container_name: adminer
     logging:
       driver: "json-file"
@@ -55,6 +53,7 @@ services:
 ######################################################
   spark:
     build: ./docker/spark
+    container_name: spark-master
     environment:
       - SPARK_MODE=master
       - SPARK_RPC_AUTHENTICATION_ENABLED=no
@@ -86,7 +85,6 @@ services:
 
   airflow:
     build: ./docker/airflow
-    restart: always
     container_name: airflow
     volumes:
       - ./mnt/airflow/airflow.cfg:/opt/airflow/airflow.cfg
@@ -98,6 +96,17 @@ services:
       timeout: 45s
       interval: 10s
       retries: 10
+
+  flask-web:
+    build: ./docker/flask
+    ports:
+      - "5000:5000"
+    command: python run.py
+    volumes:
+      - ./mnt/flask:/flask
+
+
+
 
 ######################################################
 # NETWORK
