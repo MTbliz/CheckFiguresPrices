@@ -28,7 +28,7 @@ The application is built of 6 services:
 
 Data is taken from 2 websites by python BeautifulSoup module. Then the data is processed by PySpark script and loaded to database. The data is presented in Flask Application.  
 
-![Alt text](image.png) 
+![Alt text](image.png)  
 ## Notes
 ---
 
