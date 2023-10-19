@@ -1,212 +1,352 @@
 [
     {
         "Title": "Adrax Agatone",
-        "Price": 125.0,
+        "Price": 155.0,
         "Status": "Availability: Pre-Order - dostawa po premierze",
         "Source": "FGB",
-        "Download": "2023-06-19"
-    },
-    {
-        "Title": "Assault Squad",
-        "Price": 150.0,
-        "Status": "Availability: Dostawa w ciągu 10-14 dni",
-        "Source": "FGB",
-        "Download": "2023-06-19"
-    },
-    {
-        "Title": "Attack Bike",
-        "Price": 101.2,
-        "Status": "Availability: Dostawa w ciągu 10-14 dni",
-        "Source": "FGB",
-        "Download": "2023-06-19"
-    },
-    {
-        "Title": "Bike Squad",
-        "Price": 125.0,
-        "Status": "Availability: Dostawa w ciągu 10-14 dni",
-        "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Bladeguard Veterans",
-        "Price": 146.34,
+        "Price": 175.5,
+        "Status": "Availability: 2-3 Dni",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Brutalis Dreadnought",
+        "Price": 265.0,
         "Status": "Availability: 1",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Captain with Jump Pack",
+        "Price": 140.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Chaplain in Terminator Armour",
+        "Price": 150.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Chief Librarian Tigurius",
-        "Price": 123.2,
+        "Price": 154.98,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Codex: Space Marines",
+        "Price": 195.0,
+        "Status": "Availability: 2",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Company Heroes",
+        "Price": 220.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Contemptor Dreadnought",
-        "Price": 194.44,
+        "Price": 210.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Dark Angels Veteran Squad (metal+plastik, 1999)",
+        "Price": 150.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Datacards: Salamanders",
         "Price": 60.0,
         "Status": "Availability: 2",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Datasheet Cards: Space Marines",
+        "Price": 140.0,
+        "Status": "Availability: 4",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Desolation Squad",
+        "Price": 195.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Devastator Squad",
-        "Price": 175.0,
+        "Price": 210.0,
         "Status": "Availability: 1",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Drop Pod",
-        "Price": 145.2,
+        "Price": 166.5,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Imperial Fists Primaris Upgrades and Transfers",
+        "Price": 94.0,
+        "Status": "Availability: Pre-Order - dostawa po premierze",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Iron Father Feirros",
         "Price": 125.0,
         "Status": "Availability: Pre-Order - dostawa po premierze",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Iron Hands Primaris Upgrades and Transfers",
         "Price": 75.0,
         "Status": "Availability: Pre-Order - dostawa po premierze",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Jump Pack Intercessors",
+        "Price": 195.0,
+        "Status": "Availability: 2-3 Dni",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Kayvaan Shrike",
         "Price": 125.0,
         "Status": "Availability: Pre-Order - dostawa po premierze",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Kor'sarro Khan",
         "Price": 135.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Kronikarz w pancerzu Terminator (metal, '99)",
+        "Price": 75.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Naramienniki White Scars",
+        "Price": 40.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Outriders",
         "Price": 175.0,
         "Status": "Availability: 2",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Primaris Eliminators",
         "Price": 180.11,
         "Status": "Availability: 1",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Primaris Inceptors",
         "Price": 165.0,
         "Status": "Availability: 2-3 Dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Primaris Intercessors",
         "Price": 167.2,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Primaris Lieutenant with Power Sword",
+        "Price": 100.0,
+        "Status": "Availability: Na indywidualne zamówienie",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Primaris Redemptor Dreadnought",
         "Price": 0.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Primaris Reivers",
         "Price": 175.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Primaris Repulsor",
         "Price": 250.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Ragnar Blackmane (metal, 1993)",
+        "Price": 75.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Space Marine Tactical Squad Trzecia Edycja (plastik+metal, modele '99-'03)",
+        "Price": 120.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Space Marines Dice Set",
+        "Price": 99.0,
+        "Status": "Availability: 2-3 Dni",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Space Marines Lieutenant",
+        "Price": 130.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Space Marines Piąta Edycja (pomalowane)",
+        "Price": 300.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Space Marines Tactical Squad (druga edycja, plastik 1994)",
+        "Price": 100.0,
+        "Status": "Availability: 2-3 Dni",
+        "Source": "FGB",
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Space Marines: Infernus Marines + Paints Set",
+        "Price": 130.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Space Marines: Razorback",
         "Price": 145.2,
-        "Status": "Availability: 1",
+        "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Sternguard Veteran Squad",
         "Price": 175.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Sternguard Veteran Squad",
+        "Price": 210.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Storm Speeder Hailstrike",
         "Price": 200.0,
         "Status": "Availability: 2-3 Dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Sword Brethren (metal, 2004)",
+        "Price": 90.0,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Tactical Squad",
         "Price": 150.0,
         "Status": "Availability: 1",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Terminator Squad",
         "Price": 160.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
+    },
+    {
+        "Title": "Terminator Squad",
+        "Price": 262.72,
+        "Status": "Availability: 1",
+        "Source": "FGB",
+        "Download": "2023-10-19"
     },
     {
         "Title": "Tor Garadon",
         "Price": 125.0,
         "Status": "Availability: Pre-Order - dostawa po premierze",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "Vindicare Assassin",
         "Price": 120.0,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
-        "Title": "Warhammer 40,000: Kill Team Starter Set",
-        "Price": 325.0,
-        "Status": "Availability: 1",
+        "Title": "Warhammer 40,000 Introductory Set",
+        "Price": 200.0,
+        "Status": "Availability: 2-3 Dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     },
     {
         "Title": "White Scars Primaris Upgrades & Transfers",
         "Price": 74.8,
         "Status": "Availability: Dostawa w ciągu 10-14 dni",
         "Source": "FGB",
-        "Download": "2023-06-19"
+        "Download": "2023-10-19"
     }
 ]
