@@ -97,6 +97,32 @@ services:
       interval: 10s
       retries: 10
 
+  telegraf:
+    container_name: telegraf
+    image: telegraf:1.12.3
+    volumes:
+      - ./mnt/telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+
+  influxdb:
+    container_name: influxdb
+    image: influxdb:1.7.8
+    ports:
+      - 8083:8083
+      - 8086:8086
+    volumes:
+      - ./mnt/influxdb:/var/lib/influxdb
+    command: /bin/bash -c "/var/lib/influxdb/createdb.sh && /var/lib/influxdb/creatuser.sh"
+
+
+  grafana:
+    container_name: grafana
+    image: grafana/grafana
+    volumes:
+      - ./mnt/grafana/grafana.ini:/etc/grafana/grafana.ini
+    ports:
+      - 3000:3000
+
+
   flask-web:
     build: ./docker/flask
     ports:

@@ -45,8 +45,9 @@ COPY ./constraints-3.7.txt /constraints-3.7.txt
 # Install apache airflow with subpackages
 RUN pip install --upgrade pip && \
     useradd -ms /bin/bash -d ${AIRFLOW_HOME} airflow && \
-    pip install apache-airflow[postgres,spark]==${AIRFLOW_VERSION} --constraint /constraints-3.7.txt && \
+    pip install apache-airflow[postgres,spark, statsd]==${AIRFLOW_VERSION} --constraint /constraints-3.7.txt && \
     pip install beautifulsoup4==4.12.2
+
 
 #https://raw.githubusercontent.com/apache/airflow/constraints-2.5.2/constraints-3.7.txt
 
