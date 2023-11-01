@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+#check if linux or windows format
 # Initiliase the metastore
 airflow db init
 
