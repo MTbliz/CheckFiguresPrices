@@ -125,6 +125,10 @@ services:
 
   flask-web:
     build: ./docker/flask
+    environment:
+      - DB_USER=airflow
+      - DB_PASSWORD=airflow
+      - SECRET_KEY=12345678
     ports:
       - "5000:5000"
     command: python run.py
