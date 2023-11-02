@@ -1,4 +1,4 @@
-# CheckFiguresPrices
+ CheckFiguresPrices
 
 CheckFiguresPrices application gather information about figures products prices from two websites, process them and save in database.
 Flask Application present basic statistics about products like max, min, avg price from all available records. 
@@ -26,18 +26,26 @@ The application is built of 6 services:
 - PgAdmin
 - Flask Application
 
-Data is taken from 2 websites by python BeautifulSoup module. Then the data is processed by PySpark script and loaded to database. The data is presented in Flask Application.  
+Data is taken from 2 websites by python BeautifulSoup module. Then the data is processed by PySpark script and loaded to database. 
+The data is presented in Flask Application.  
+The application is monitored via TIG stack. The Telegeraf agent aggregates information about Airflow DAGs and send them to InfluxDB.
+Finally, the data is presented in the Grafana tool.
 
-![Alt text](image.png)  
+![Alt text](image.PNG)  
 ## Notes
 ---
 
 Default credentials:  
 
 Airflow:
-- login: Admin
+- login: admin
 - password: admin
 
 Database:
-- login: Airflow
-- password: Airflow
+- login: airflow
+- password: airflow
+
+Grafana:
+- login: admin
+- password: admin
+
