@@ -118,6 +118,7 @@ services:
     image: grafana/grafana
     volumes:
       - ./mnt/grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./mnt/grafana/grafana.db:/var/lib/grafana/grafana.db
     ports:
       - 3000:3000
 
