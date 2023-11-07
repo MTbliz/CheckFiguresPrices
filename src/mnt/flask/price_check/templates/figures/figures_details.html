@@ -3,15 +3,14 @@
 {% extends 'market.html' %} 
 {% block center_content %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<div class="container">
-    <div class="row" style="background-color: rgb(209, 231, 221);border-top: grey; margin-top: 60px; margin-bottom: 40px; height: 600px;">
+    <div class="row" style="background-color: rgb(209, 231, 221);border-top: grey; margin-top: 60px; margin-bottom: 40px;">
         <div class="col-md-6" style="margin: 0; padding: 0">
             <div class="row" style="margin-top: 8px; color: black; font-weight: bold">
                 <h5>{{ figure }}</h5>
                 <hr/>
             </div>
             <div class="row">
-                <table class="table table-success table-striped table-sm" style="margin-top: 10px; margin-left: 5px;">
+                <table class="table table-success table-striped table-sm" style="margin-top: 10px;  font-size: small;">
                     <thead>
                         <tr>
                             <th scope="col">Date</th>
@@ -39,18 +38,18 @@
                     <!--Pagination Links-->
                     <div class="pagination" >
                         <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=figures_details_pagin.prev_num) }}" class="btn btn-outline-dark" {% if figures_details_pagin.page == 1 %}disabled{% endif %}>
-                            &laquo;
+                            <div style="font-size:small">&laquo;</div>
                         </a>
                         <!--Loop through the number of pages to display a link for each-->
                         {% for page_num in figures_details_pagin.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %} 
                         {% if page_num %} 
                         <!-- Check for active page and set the link to "Active"-->
                         {% if figures_details_pagin.page == page_num %} 
-                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=page_num) }}" class="btn btn-dark">
+                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=page_num) }}" class="btn btn-dark" style="font-size:small">
                             {{ page_num }} 
                         </a>
                         {% else %} 
-                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=page_num) }}" class="btn btn-outline-dark">
+                        <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=page_num) }}" class="btn btn-outline-dark" style="font-size:small">
                             {{ page_num }}
                         </a>
                         {% endif %} 
@@ -59,7 +58,7 @@
                         {% endif %} 
                         {% endfor %} 
                         <a href="{{ url_for('figures.figures_details_page',id=figure.id, page=figures_details_pagin.next_num )}}" class="btn btn-outline-dark" {% if figures_details_pagin.page == figures_details_pagin.pages %}disabled{% endif %} >
-                            &raquo;
+                            <div style="font-size:small">&raquo;</div>
                         </a>
                     </div>
                 </div>
@@ -72,7 +71,7 @@
             </div>
         </div>
         <div class="col-md-6" style="margin: 0; padding: 0;">
-            <div class="row" style="height: 130px;">
+            <div class="row" >
                     <div class="col-md-4" style=" margin-top: 10px;">
                         <div class="card text-white bg-success mb-3">
                             <div class="card-body">
@@ -89,21 +88,24 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4" style=" margin-top: 10px;">
+                    <div class="col-md-4" style=" margin-top: 10px;" >
                         <div class="card text-white bg-success mb-3">
                             <div class="card-body">
-                                <h1 class="card-title">{{ '%0.2f' | format(avg_price) }}</h1>
+                                <h1 class="card-title" >{{ '%0.1f' | format(avg_price) }}</h1>
                                 <p class="card-text">Avg Price</p>
                             </div>
                         </div>
                     </div>
             </div>
-            <div class="row" style="height: 470px;">
+
+            <div class="row" >
+                <div class="col-md-12" style=" margin-top: 10px;" >
                 <canvas id="myChart" style="height: 95%;" ></canvas>
             </div>
         </div>
     </div>
-</div> 
+    </div>
+
 
 <script>
   const ctx = document.getElementById('myChart');
@@ -164,8 +166,6 @@
             }
         }
     };
-
 new Chart(ctx, config)
   </script>
-
 {% endblock %}

@@ -1,13 +1,14 @@
 body {
     background-color: #212121;
     color: white;
-    min-width: 1500px;
 }
 
 .content {
+    font-size: small;
     background-color: #48494c;
     display: flex;
     min-height: 76vh;
+        min-width: 400px;
 }
 
 .footer {

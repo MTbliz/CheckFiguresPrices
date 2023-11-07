@@ -11,7 +11,7 @@
     </div>
     <div class="row table-row">
         <div class="col-md-10 scroll-table">
-            <table class="table table-success table-striped table-sm">
+            <table class="table table-success table-striped table-sm" style="font-size: small">
                 <thead>
                     <tr>
                         <th scope="col">Title</th>
@@ -96,18 +96,18 @@
             <!--Pagination Links-->
             <div class="pagination">
                 <a href="{{ url_for('figures.figures_page', page=figures_details_pagin.prev_num, sorted_by=selected_option) }}" class="btn btn-outline-light" {% if figures_details_pagin.page == 1 %}disabled{% endif %}>
-                    &laquo;
+                    <div style="font-size:small">&laquo;</div>
                 </a>
                 <!--Loop through the number of pages to display a link for each-->
                 {% for page_num in figures_details_pagin.iter_pages(left_edge=1, right_edge=1, left_current=1, right_current=2) %}
                 {% if page_num %}
                 <!-- Check for active page and set the link to "Active"-->
                 {% if figures_details_pagin.page == page_num %}
-                <a href="{{ url_for('figures.figures_page', page=page_num, sorted_by=selected_option) }}" class="btn btn-light">
+                <a href="{{ url_for('figures.figures_page', page=page_num, sorted_by=selected_option) }}" class="btn btn-light" style="font-size: small">
                     {{ page_num }}
                 </a>
                 {% else %}
-                <a href="{{ url_for('figures.figures_page', page=page_num, sorted_by=selected_option) }}" class="btn btn-outline-light">
+                <a href="{{ url_for('figures.figures_page', page=page_num, sorted_by=selected_option) }}" class="btn btn-outline-light" style="font-size: small">
                     {{ page_num }}
                 </a>
                 {% endif %}
@@ -115,8 +115,8 @@
                 ...
                 {% endif %}
                 {% endfor %}
-                <a href="{{ url_for('figures.figures_page', page=figures_details_pagin.next_num, sorted_by=selected_option )}}" class="btn btn-outline-light" {% if figures_details_pagin.page == figures_details_pagin.pages %}disabled{% endif %} >
-                    &raquo;
+                <a href="{{ url_for('figures.figures_page', page=figures_details_pagin.next_num, sorted_by=selected_option )}}" class="btn btn-outline-light"  {% if figures_details_pagin.page == figures_details_pagin.pages %}disabled{% endif %} >
+                    <div style="font-size:small">&raquo;</div>
                 </a>
             </div>
         </div>
@@ -129,4 +129,12 @@
             </div>
         </div>
     </div>
+<style>
+
+@media only screen and (max-width: 767px) {
+    .scroll-table {
+        order:1
+    }
+}
+</style>
 {% endblock %}
